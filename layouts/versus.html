@@ -44,6 +44,18 @@
           </div>
         </section>
 
+        {{- if $p.art }}
+        <section class="agent-section" aria-labelledby="art-title">
+          <div class="section-head">
+            <h2 id="art-title" class="h2">{{ $p.art.heading }}</h2>
+          </div>
+          <figure class="versus-art glass">
+            <img src="{{ $p.art.src | relURL }}" alt="{{ $p.art.alt }}" width="960" height="540" loading="lazy">
+            <figcaption class="muted ui">{{ $p.art.caption }}</figcaption>
+          </figure>
+        </section>
+        {{- end }}
+
         {{- if $p.wins }}
         <section class="agent-section" aria-labelledby="wins-title">
           <div class="versus-ledger glass">
@@ -87,6 +99,15 @@
           <p>{{ site.Params.versus_belief }}</p>
           <p>{{ $p.signal }}</p>
         </section>
+
+        {{- if $p.code }}
+        <section class="agent-section" aria-labelledby="code-title">
+          <div class="section-head">
+            <h2 id="code-title" class="h2">{{ $p.code.heading }}</h2>
+          </div>
+          {{ partial "code-card.html" (dict "code" $p.code.text "title" $p.code.title "prompt" true) }}
+        </section>
+        {{- end }}
 
         {{ partial "major-says.html" (dict "line" $p.major) }}
 
