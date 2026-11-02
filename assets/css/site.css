@@ -2756,6 +2756,8 @@ a.card-link:focus-visible, a.platform:focus-visible, a.docs-card:focus-visible {
 }
 .versus-faq details:first-child { border-top: var(--stroke-hairline) solid var(--line); }
 .versus-all { margin-top: var(--space-6); }
+.versus-logos { display: flex; flex-wrap: wrap; gap: var(--grid-gap); padding: 0; list-style: none; }
+.versus-logos li { display: grid; justify-items: center; gap: var(--space-2); }
 
 /* ---------- Whitespace and rhythm (DESIGN.md, "Whitespace and rhythm") ----------
    One spacing system for every page. Sections, heads, grids and cards read these
